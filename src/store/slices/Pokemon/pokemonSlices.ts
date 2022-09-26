@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Result } from '../../../interface/pokemon';
+import { Pokemon } from '../../../interface/pokemon';
 
 interface initialState {
-  pokemon: Result[];
+  pokemon: Pokemon[];
   isLoading: boolean;
 }
 
@@ -18,12 +18,14 @@ export const pokemonSlice = createSlice({
     startFetching: (state) => {
       state.isLoading = true;
     },
-    savePokemons: (state, action: PayloadAction<Result[]>) => {
-      console.log(action.payload);
-      // state.pokemon = action.payload;
-      // state.isLoading = false;
+    savePokemons: (state, action: PayloadAction<Pokemon[]>) => {
+      // console.log(action.payload);
+      state.pokemon = action.payload;
+      state.isLoading = false;
     }
   }
 })
 
 export const { startFetching, savePokemons } = pokemonSlice.actions;
+
+export type PersonajesAcciones = ReturnType<typeof startFetching | typeof savePokemons>;

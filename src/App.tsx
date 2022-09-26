@@ -1,12 +1,18 @@
 import './App.css'
 import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import { incrementar } from './store/slices/Contador/contadorSlice';
+import { useEffect } from 'react';
+import { buscarPokemosn } from './store/thunk/pokemonThunk';
 
 function App() {
 
   const value = useAppSelector(state => state.contador.value)
 
   const dispatch = useAppDispatch()
+  
+  useEffect(() => {
+    dispatch(buscarPokemosn())
+  }, [])
   
 
   return (

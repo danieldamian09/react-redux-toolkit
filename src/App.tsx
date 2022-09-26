@@ -7,6 +7,7 @@ function App() {
   const value = useAppSelector(state => state.contador.value)
 
   const dispatch = useAppDispatch()
+  
 
   return (
     <div className="App">

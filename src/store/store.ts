@@ -10,7 +10,8 @@ export const store = configureStore({
   }
 })
 
+// Para nuestro hook personalizado de useSelector
 export type RootState = ReturnType<typeof store.getState>
 
-
+// Para nuetro hook personalizado Dispatch
 export type AppDispatch = typeof store.dispatch

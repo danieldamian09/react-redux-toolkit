@@ -7,6 +7,9 @@ import { buscarPokemosn } from './store/thunk/pokemonThunk';
 function App() {
 
   const value = useAppSelector(state => state.contador.value)
+  const pokemons = useAppSelector(state => state.pokemons.pokemons)
+
+  console.log(pokemons)
 
   const dispatch = useAppDispatch()
   

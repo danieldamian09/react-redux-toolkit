@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Pokemon } from '../../../interface/pokemon';
 
 interface initialState {
-  pokemon: Pokemon[];
+  pokemons: Pokemon[];
   isLoading: boolean;
 }
 
 const initialState: initialState = {
-  pokemon: [],
+  pokemons: [],
   isLoading: false,
 }
 
@@ -20,7 +20,7 @@ export const pokemonSlice = createSlice({
     },
     savePokemons: (state, action: PayloadAction<Pokemon[]>) => {
       // console.log(action.payload);
-      state.pokemon = action.payload;
+      state.pokemons = action.payload;
       state.isLoading = false;
     }
   }
